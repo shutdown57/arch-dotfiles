@@ -60,6 +60,7 @@ return {
           async = false, -- not recommended to change
           quiet = false, -- not recommended to change
         },
+
         ---@type table<string, conform.FormatterUnit[]>
         formatters_by_ft = {
           php = { "pint", "phpcbf", "php_cs_fixer" },
