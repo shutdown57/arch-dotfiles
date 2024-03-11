@@ -7,6 +7,10 @@ vim.filetype.add({
   pattern = {
     [".*%.blade%.php"] = "blade",
   },
+  extension = {
+    templ = "templ",
+    blade = "blade",
+  },
 })
 
 -- Turn off auto comment on new line
