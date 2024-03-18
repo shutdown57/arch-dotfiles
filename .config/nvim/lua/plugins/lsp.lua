@@ -2,6 +2,9 @@ return {
   { "pmizio/typescript-tools.nvim" },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "pmizio/typescript-tools.nvim"
+    },
     opts = {
       setup = {
         clangd = function(_, opts)
@@ -24,6 +27,10 @@ return {
       end,
       servers = {
         tsserver = {
+          -- init_options = {
+          --   plugins = {}
+          -- },
+
           filetypes = {
             "javascript",
             "javascript.jsx",
@@ -38,29 +45,31 @@ return {
             plugins = {
               {
                 name = "@vue/typescript-plugin",
-                location = vim.fn.expand("$HOME/.node_modules/lib/node_modules/@vue/typescript-plugin"),
+                -- location = vim.fn.expand("$HOME/.node_modules/lib/node_modules/@vue/typescript-plugin"),
+                location = vim.fn.expand("$HOME/.bun/install/global/node_modules/@vue/typescript-plugin/"),
                 languages = { "javascript", "typescript", "vue" },
               },
             },
           },
         },
-        ["typescript-tools"] = {
-          filetypes = {
-            "javascript",
-            "javascript.jsx",
-            "javascriptreact",
-            "json",
-            "typescript",
-            "typescript.tsx",
-            "typescriptreact",
-            "vue",
+        -- ["typescript-tools"] = {
+        --   filetypes = {
+        --     "javascript",
+        --     "javascript.jsx",
+        --     "javascriptreact",
+        --     "json",
+        --     "typescript",
+        --     "typescript.tsx",
+        --     "typescriptreact",
+        --     "vue",
+        --   },
+        --   mason = false,
+        -- },
+        volar = {},
+        eslint = {
+          settings = {
+            run = "onSave",
           },
-          mason = false,
-        },
-      },
-      eslint = {
-        settings = {
-          run = "onSave",
         },
       },
     },
