@@ -1,0 +1,7 @@
+return {
+  "neovim/nvim-lspconfig",
+  opt = {
+    ["language_server_phpactor.enable"] = true,
+    ["language_server_phpstan.enable"] = true,
+  },
+}
