@@ -3,3 +3,6 @@
 -- Add any additional options here
 
 -- vim.g.lazyvim_php_lsp = "intelephense"
+
+-- Prepend mise shims to PATH
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH

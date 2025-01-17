@@ -1,8 +1,8 @@
 return {
   "David-Kunz/gen.nvim",
   opts = {
-    -- Available models: reader-lm:latest | qwen2:1.5b | smollm:latest | llama3.1:latest | qwen2.5:7b
-    model = "qwen2.5:7b", -- The default model to use.
+    -- Available models: llama3.2:latest | qwen2.5:latest | llama3.1:latest
+    model = "llama3.2:latest", -- The default model to use.
     host = "localhost", -- The host running the Ollama service.
     port = "11434", -- The port on which the Ollama service is listening.
     quit_map = "q", -- set keymap for close the response window

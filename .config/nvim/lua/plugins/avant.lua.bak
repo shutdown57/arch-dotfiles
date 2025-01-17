@@ -9,8 +9,8 @@ return {
       ollama = {
         ["local"] = true,
         endpoint = "127.0.0.1:11434/v1",
-        -- Available models: reader-lm:latest | qwen2:1.5b | smollm:latest | llama3.1:latest
-        model = "llama3.1:latest",
+        -- Available models: llama3.2:latest | qwen2.5:latest | llama3.1:latest
+        model = "llama3.2:latest",
         parse_curl_args = function(opts, code_opts)
           return {
             url = opts.endpoint .. "/chat/completions",

@@ -24,8 +24,8 @@ return {
           },
           schema = {
             model = {
-              -- Available models: reader-lm:latest | qwen2:1.5b | smollm:latest | llama3.1:latest | qwen2.5:7b
-              default = "qwen2.5:7b",
+              -- Available models: llama3.2:latest | qwen2.5:latest | llama3.1:latest
+              default = "llama3.2:latest",
             },
             num_ctx = {
               default = 16384,

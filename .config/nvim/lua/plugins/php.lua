@@ -12,6 +12,36 @@ return {
         command = "node",
         args = { path .. "/extension/out/phpDebug.js" },
       }
+      dap.configurations.php = {
+        -- to run php right from the editor
+        {
+          name = "run current script",
+          type = "php",
+          request = "launch",
+          port = 9003,
+          cwd = "${fileDirname}",
+          program = "${file}",
+          runtimeExecutable = "php",
+        },
+        -- to listen to any php call
+        {
+          name = "listen for Xdebug local",
+          type = "php",
+          request = "launch",
+          port = 9003,
+        },
+        -- to listen to php call in docker container
+        {
+          name = "listen for Xdebug docker",
+          type = "php",
+          request = "launch",
+          port = 9003,
+          -- this is where your file is in the container
+          pathMappings = {
+            ["/opt/project"] = "${workspaceFolder}",
+          },
+        },
+      }
     end,
   },
   {
